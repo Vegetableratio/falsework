@@ -8,7 +8,7 @@ function resolve(dir) {
   return path.join(__dirname, '..', dir);
 }
 module.exports = {
-  mode: 'development',
+  // 核心概念
   entry: path.resolve(__dirname, '../src/main.js'),
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -60,4 +60,14 @@ module.exports = {
     }),
     new CssMinimizerWebpackPlugin(),
   ],
+  // 其他概念
+  mode: 'development',
+  target: 'web',
+  devtool: 'eval-source-map',
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, '../src'),
+    },
+    extensions: ['.js', '.vue', '.json'],
+  },
 };

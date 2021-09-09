@@ -6,7 +6,9 @@
 export default {
   name: 'App',
   data() {
-    return {};
+    return {
+      img: require('@/assets/logo.png'),
+    };
   },
   components: {},
   computed: {},
